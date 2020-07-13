@@ -4,7 +4,7 @@
 
 #if ( defined(_WIN32) || defined(_WIN64) )
 
-#define _CRT_SECURE_NO_WARNINGS
+	#define _CRT_SECURE_NO_WARNINGS
 
 #endif
 
@@ -14,17 +14,17 @@
 
 #if ( defined(__linux) || defined(_linux) )
 
-#include <netinet/in.h>
+	#include <netinet/in.h>
 
 #elif ( defined(_WIN32) || defined(_WIN64) )
 
-#include <Winsock2.h>
-#pragma comment(lib, "ws2_32")
+	#include <Winsock2.h>
+	#pragma comment(lib, "ws2_32")
 
 #endif
 
-int main(int argc, char* argv[]) {
-    FILE* file1_fp, * file2_fp;
+int main(int argc, char *argv[]) {
+    FILE *file1_fp, *file2_fp;
     uint32_t file1_value, file2_value, sum_value;
 
     if (argc != 3) {
