@@ -9,4 +9,3 @@ add-nbo.o: add-nbo.c
 
 clean:
 	rm -f add-nbo *.o
-
