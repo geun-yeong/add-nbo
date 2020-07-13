@@ -40,18 +40,18 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    if (fread(&file1_value, sizeof(uint32_t), 1, file1_fp) == EOF) {
+    if (fread((void *)(&file1_value), sizeof(uint32_t), 1, file1_fp) == EOF) {
         fprintf(stderr, "File1 data may be invalid\n");
         return 1;
     }
 
-    if (fread(&file2_value, sizeof(uint32_t), 1, file2_fp) == EOF) {
+    if (fread((void *)(&file2_value), sizeof(uint32_t), 1, file2_fp) == EOF) {
         fprintf(stderr, "File2 data may be invalid\n");
         return 1;
     }
 
-    file1_value = htonl(file1_value);
-    file2_value = htonl(file2_value);
+    file1_value = ntohl(file1_value);
+    file2_value = ntohl(file2_value);
     sum_value = file1_value + file2_value;
 
     printf("%d(0x%x) + %d(0x%x) = %d(0x%x)\n",
