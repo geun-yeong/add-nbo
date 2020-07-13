@@ -8,4 +8,4 @@ add-nbo.o: add-nbo.c
 	g++ -c -o add-nbo.o add-nbo.c
 
 clean:
-	rm -f add-nbo add-nbo-dbg *.o
+	rm -f add-nbo *.o
